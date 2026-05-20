@@ -738,6 +738,44 @@ a:hover {
   padding: clamp(1.35rem, 3vw, 2rem);
 }
 
+.program-showcase {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .12);
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, .08);
+  box-shadow: 0 24px 54px rgba(0, 0, 0, .16);
+}
+
+.program-showcase img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: transform 280ms ease;
+}
+
+.program-showcase:hover img {
+  transform: scale(1.04);
+}
+
+.program-showcase-copy {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 1rem;
+  background: linear-gradient(180deg, transparent, rgba(2, 6, 23, .9));
+}
+
+.program-showcase-copy span {
+  display: inline-flex;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .12);
+  color: white;
+  padding: .55rem .85rem;
+  font-size: .86rem;
+  font-weight: 900;
+  backdrop-filter: blur(12px);
+}
+
 .auth-shell {
   position: relative;
   overflow: hidden;

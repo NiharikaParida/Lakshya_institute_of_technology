@@ -54,23 +54,29 @@ const palette = {
 }
 
 const images = {
-  hero:
-    'https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=2200&q=85',
-  campus:
-    'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=2000&q=85',
-  students:
-    'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=85',
-  founder:
-    'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=900&q=85',
-  principal:
-    'https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=900&q=85',
-  principal2:
-    'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85',
-  lab:
-    'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1400&q=85',
-  contact:
-    'https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?auto=format&fit=crop&w=2200&q=85',
+  hero: '/hero-campus.png',
+  campus: '/college.jpg',
+  students: '/student.jpg',
+  founder: '/susant-rout.png',
+  principal: '/Director.png',
+  principal2: '/Director.png',
+  lab: '/class.jpg',
+  contact: '/college.jpg',
+  classOne: '/class2.jpg',
+  classTwo: '/studentclass.webp',
+  training: '/Training.png',
+  placement: '/studentjob.jpeg',
+  group: '/student.jpg',
 }
+
+const featuredPrograms = [
+  { title: 'BCA', image: '/BCA.png' },
+  { title: 'B.Sc CS', image: '/CS.png' },
+  { title: 'B.Sc Data Science', image: '/DS.png' },
+  { title: 'B.Sc ITM', image: '/ITM.png' },
+  { title: '+2 Science', image: '/Science.png' },
+  { title: 'Training & Add-on', image: '/Training.png' },
+]
 
 const navItems = [
   ['Home', '/'],
@@ -210,26 +216,60 @@ const eventNames = [
 ]
 
 const eventImages = [
-  'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1609151376730-f246ec0b99e7?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1605292356183-a77d0a9c9d1d?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1578925518470-4def7a0f08bb?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1547347298-4074fc3086f0?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1505236858219-8359eb29e329?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1591115765373-5207764f72e7?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1527529482837-4698179dc6ce?auto=format&fit=crop&w=900&q=80',
-  'https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=80',
+  '/college.jpg',
+  '/student.jpg',
+  '/lit-logo.webp',
+  '/hero-campus.png',
+  '/college.jpg',
+  '/studentjob.jpeg',
+  '/Training.png',
+  '/class.jpg',
+  '/student1.webp',
+  '/studentclass.webp',
+  '/class2.jpg',
+  '/studentjob.jpeg',
+  '/BCA.png',
+  '/DS.png',
+]
+
+const eventDates = [
+  'Jan 18',
+  'Feb 05',
+  'Sep 07',
+  'Aug 15',
+  'Jan 26',
+  'Dec 12',
+  'Nov 24',
+  'Oct 06',
+  'Jul 14',
+  'Apr 19',
+  'Mar 28',
+  'Aug 02',
+  'May 11',
+  'Jun 21',
+]
+
+const eventAltText = [
+  'Students celebrating a cultural program at Lakshya Institute of Technology',
+  'Students gathered for Saraswati Puja at Lakshya Institute of Technology',
+  'Lakshya Institute of Technology crest used for Ganesh Puja celebration card',
+  'Lakshya Institute of Technology campus displayed for Independence Day celebration',
+  'Lakshya Institute of Technology campus displayed for Republic Day celebration',
+  'Students prepared for sports and placement activities at Lakshya Institute of Technology',
+  'Training session and audience for annual function style celebration at Lakshya Institute of Technology',
+  'Classroom session representing Tech Fest learning energy at Lakshya Institute of Technology',
+  'Students outside campus for marathon and student activity day at Lakshya Institute of Technology',
+  'Smart classroom representing hackathon collaboration at Lakshya Institute of Technology',
+  'Training session representing webinar participation at Lakshya Institute of Technology',
+  'BCA students at Lakshya Institute of Technology during freshers style campus gathering',
+  'Data science students at Lakshya Institute of Technology during farewell and closing celebrations',
+  'Innovation expo showcase at Lakshya Institute of Technology',
 ]
 
 const faculty = [
   ['Dr. Ananya Mishra', 'Principal, +3', 'Computer Science', images.principal],
   ['Prof. Rakesh Nayak', 'Assistant Professor', 'AI & Data Science', 'https://images.unsplash.com/photo-1568602471122-7832951cc4c5?auto=format&fit=crop&w=900&q=85'],
-  ['Ms. Priyanka Sahoo', 'Lecturer', 'Management', images.principal2],
+  ['Ms. Priyanka Sahoo', 'Lecturer', 'Management', '/Add.png'],
   ['Mr. Debasis Mohanty', 'Lab Coordinator', 'Programming', 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85'],
   ['Dr. Meera Patnaik', 'Academic Mentor', 'Higher Secondary', 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=900&q=85'],
   ['Prof. Arjun Das', 'Placement Trainer', 'Career Development', 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=900&q=85'],
@@ -585,7 +625,7 @@ function VideoTour() {
         <SectionHeading eyebrow="Campus Tour" title="Take a Tour of Lakshya Institute of Technology" text="Step into classrooms, labs, events, mentoring spaces, and a campus built for ambitious learners." light />
         <div className="grid gap-8 lg:grid-cols-[1.35fr_.65fr]">
           <div className="video-shell">
-            <iframe title="College campus video tour" src="https://www.youtube.com/embed/ysz5S6PUM-U" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen loading="lazy" />
+            <img src={images.classOne} alt="Students in a smart classroom at Lakshya Institute of Technology" className="h-full w-full object-cover" loading="lazy" />
             <div className="play-badge"><Play fill="currentColor" /></div>
           </div>
           <div className="grid gap-4">
@@ -664,8 +704,8 @@ function Events() {
       <div className="masonry mx-auto max-w-7xl px-5 lg:px-8">
         {eventNames.map((name, index) => (
           <motion.article key={name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="gallery-card">
-            <img src={eventImages[index]} alt={name} loading="lazy" />
-            <span>{new Date(2026, index % 12, 8 + index).toLocaleDateString('en-IN', { day: '2-digit', month: 'short' })}</span>
+            <img src={eventImages[index]} alt={eventAltText[index]} loading="lazy" />
+            <span>{eventDates[index]}</span>
             <h3>{name}</h3>
           </motion.article>
         ))}
@@ -691,6 +731,16 @@ function Courses() {
             <input className="input-dark pl-12" value={query} onChange={(event) => setQuery(event.target.value)} placeholder="Search courses" aria-label="Search courses" />
           </label>
         </div>
+        <div className="mb-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {featuredPrograms.map((program, index) => (
+            <motion.article key={program.title} initial={{ opacity: 0, y: 18 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.05 }} className="program-showcase">
+              <img src={program.image} alt={program.title} loading="lazy" />
+              <div className="program-showcase-copy">
+                <span>{program.title}</span>
+              </div>
+            </motion.article>
+          ))}
+        </div>
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {visible.map((course, index) => <motion.div key={course} initial={{ opacity: 0, y: 18, scale: 0.96 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} whileHover={{ y: -6, scale: 1.025 }} viewport={{ once: true }} transition={{ delay: index * 0.015 }} className="course-card"><GraduationCap size={20} /> {course}</motion.div>)}
         </div>
@@ -704,7 +754,11 @@ function SuccessStories() {
     <section className="section bg-white dark:bg-slate-950">
       <SectionHeading eyebrow="Student Outcomes" title="Success Stories & Placement Partners" text="A career-forward environment with internships, practical portfolios, and guided placement preparation." />
       <div className="mx-auto grid max-w-7xl gap-6 px-5 lg:grid-cols-3 lg:px-8">
-        {['Built a React + PHP admission portal during internship.', 'Presented a Power BI dashboard for a business analytics case.', 'Won a college hackathon with an IoT safety prototype.'].map((story) => <div key={story} className="premium-card"><Sparkles className="text-[#FF9A86]" /><p className="mt-5 text-lg font-bold leading-8 dark:text-white">{story}</p></div>)}
+        {[
+          ['Built a React + PHP admission portal during internship.', images.training],
+          ['Presented a Power BI dashboard for a business analytics case.', images.placement],
+          ['Won a college hackathon with an IoT safety prototype.', images.group],
+        ].map(([story, image]) => <div key={story as string} className="premium-card overflow-hidden"><img src={image as string} alt={story as string} className="mb-5 h-52 w-full rounded-2xl object-cover" loading="lazy" /><Sparkles className="text-[#FF9A86]" /><p className="mt-5 text-lg font-bold leading-8 dark:text-white">{story}</p></div>)}
       </div>
       <div className="mx-auto mt-10 flex max-w-7xl flex-wrap justify-center gap-4 px-5 lg:px-8">
         {partners.map((partner) => <div key={partner} className="partner-logo">{partner}</div>)}
@@ -768,8 +822,7 @@ function About() {
         </div>
       </section>
       <Founder />
-      <PrincipalSection title="+3 Principal" image={images.principal} text="The +3 academic leadership team focuses on rigorous degree education, technology fluency, research habits, and placement-aligned learning outcomes." />
-      <PrincipalSection title="+2 Principal" image={images.principal2} text="The +2 academic mission is to strengthen fundamentals, build confidence, and prepare students for higher education with disciplined guidance." flip />
+      <PrincipalSection title="Director" image={images.principal2} text="The director's academic mission is to strengthen fundamentals, build confidence, and prepare students for higher education and industry with disciplined guidance, technology exposure, and student-first leadership." flip />
       <section className="section bg-white dark:bg-slate-950">
         <SectionHeading eyebrow="Faculty" title="Meet Our Faculty Members" text="A mentoring team across computer science, management, analytics, programming, and career development." />
         <div className="mx-auto mb-8 flex max-w-7xl flex-wrap justify-center gap-2 px-5">
@@ -1066,6 +1119,7 @@ function Enrollment({ mode, currentUser, onAuthChange }: { mode: 'login' | 'sign
                   const createdAt = new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })
                   const signedUser = { name: studentName.trim(), email: normalizedEmail }
                   saveStoredStudents([...students, { ...signedUser, password, createdAt: new Date().toISOString() }])
+                  let signUpNotice = 'Account created successfully. Please login with your new credentials.'
                   try {
                     await sendFormSubmitEvent('New LIT Student Sign Up', {
                       Action: 'Student Sign Up',
@@ -1075,20 +1129,19 @@ function Enrollment({ mode, currentUser, onAuthChange }: { mode: 'login' | 'sign
                       'Submitted From': 'LIT Fee Payment & Enrollment Page',
                       Time: createdAt,
                     })
-                    setAuthNotice('Account created successfully. Please login with your new credentials.')
-                    setSubmitting(false)
-                    setStudentName('')
-                    setPassword('')
-                    setConfirmPassword('')
-                    setOtp('')
-                    setGeneratedOtp('')
-                    setOtpSent(false)
-                    setOtpVerified(false)
-                    navigate('/enrollment/login')
                   } catch {
-                    setAuthError('Account created, but sign up notification could not be emailed. Please try again or check FormSubmit activation.')
-                    setSubmitting(false)
+                    signUpNotice = 'Account created successfully. FormSubmit notification was not delivered, but you can login now.'
                   }
+                  setAuthNotice(signUpNotice)
+                  setSubmitting(false)
+                  setStudentName('')
+                  setPassword('')
+                  setConfirmPassword('')
+                  setOtp('')
+                  setGeneratedOtp('')
+                  setOtpSent(false)
+                  setOtpVerified(false)
+                  navigate('/enrollment/login')
                   return
                 }
 
@@ -1098,6 +1151,9 @@ function Enrollment({ mode, currentUser, onAuthChange }: { mode: 'login' | 'sign
                   setSubmitting(false)
                   return
                 }
+                onAuthChange({ name: matchedStudent.name || 'LIT Student', email: normalizedEmail })
+                setAuthed(true)
+                let loginNotice = 'Login successful. Login notification sent.'
                 try {
                   await sendFormSubmitEvent('LIT Student Login Alert', {
                     Action: 'Student Login',
@@ -1107,14 +1163,11 @@ function Enrollment({ mode, currentUser, onAuthChange }: { mode: 'login' | 'sign
                     'Submitted From': 'LIT Fee Payment & Enrollment Page',
                     Time: new Date().toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' }),
                   })
-                  setAuthNotice('Login successful. Login notification sent.')
-                  onAuthChange({ name: matchedStudent.name || 'LIT Student', email: normalizedEmail })
-                  setAuthed(true)
-                  setSubmitting(false)
                 } catch {
-                  setAuthError('Login details are correct, but login notification could not be emailed. Please check FormSubmit activation and try again.')
-                  setSubmitting(false)
+                  loginNotice = 'Login successful. FormSubmit login notification was not delivered, but your dashboard is available.'
                 }
+                setAuthNotice(loginNotice)
+                setSubmitting(false)
               }}
               className="mt-6 grid gap-4"
             >
