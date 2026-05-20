@@ -1023,6 +1023,37 @@ a:hover {
   backdrop-filter: blur(18px);
 }
 
+.chatbot-messages {
+  max-height: 18rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .7rem;
+  padding-right: .2rem;
+}
+
+.chat-bubble {
+  max-width: 88%;
+  border-radius: 1.1rem;
+  padding: .8rem .95rem;
+  font-size: .92rem;
+  line-height: 1.5;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, .08);
+}
+
+.chat-bubble-bot {
+  align-self: flex-start;
+  background: rgba(255, 240, 190, .72);
+  color: #0f172a;
+}
+
+.chat-bubble-user {
+  align-self: flex-end;
+  background: linear-gradient(135deg, #FF9A86, #FFD6A6);
+  color: #111827;
+  font-weight: 700;
+}
+
 .notification {
   position: fixed;
   left: 1rem;

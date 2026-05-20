@@ -1362,8 +1362,54 @@ function MapFrame() {
   return <iframe title="LIT campus map" className="h-[420px] w-full rounded-[2rem] border-0 shadow-2xl" loading="lazy" src="https://www.google.com/maps?q=Infocity%20Chandrasekharpur%20Bhubaneswar%20Odisha&output=embed" />
 }
 
+type ChatMessage = { role: 'bot' | 'user'; text: string }
+
+function getAdmissionReply(question: string) {
+  const text = question.toLowerCase()
+  if (text.includes('fee') || text.includes('payment') || text.includes('cost')) {
+    return 'Fee details vary by program. Open the Fee Payment page to review student payment options, and our admissions team can confirm the latest structure for BCA, B.Sc CS, ITM, Data Science, and +2 Science.'
+  }
+  if (text.includes('course') || text.includes('program') || text.includes('bca') || text.includes('data science') || text.includes('science')) {
+    return 'LIT offers BCA, B.Sc CS, B.Sc ITM, B.Sc Data Science, BCA AI & ML, higher secondary (+2), plus skill programs in AI, Python, Java, analytics, web technology, and internships.'
+  }
+  if (text.includes('admission') || text.includes('apply') || text.includes('enroll') || text.includes('eligibility')) {
+    return 'For admission help, start from the Sign Up or Enrollment page, then prepare your academic details, active email, and phone number. The institute can guide you on eligibility, branch selection, and next steps after enquiry.'
+  }
+  if (text.includes('placement') || text.includes('job') || text.includes('internship')) {
+    return 'LIT highlights placement preparation through live projects, internships, interview practice, and industry-focused training in software, analytics, and communication skills.'
+  }
+  if (text.includes('contact') || text.includes('phone') || text.includes('email') || text.includes('reach')) {
+    return 'You can use the Reach Us page after logging in, call +91 6747100200 or +91 9338169966, and contact the institute through the admissions support details shown on the site.'
+  }
+  if (text.includes('hostel') || text.includes('campus') || text.includes('facility') || text.includes('lab')) {
+    return 'The campus experience focuses on smart classrooms, computing labs, project spaces, academic mentoring, and a modern student learning environment in Odisha.'
+  }
+  return 'I can help with courses, admissions, fees, placements, campus facilities, and contact details. Try asking something like "What courses are available?" or "How do I apply for admission?"'
+}
+
 function FloatingActions() {
   const [chat, setChat] = useState(false)
+  const [chatInput, setChatInput] = useState('')
+  const [chatLoading, setChatLoading] = useState(false)
+  const [messages, setMessages] = useState<ChatMessage[]>([
+    {
+      role: 'bot',
+      text: 'Hello! I am your LIT admission assistant. Ask me about courses, fees, admissions, placements, or campus facilities.',
+    },
+  ])
+
+  const submitChat = async (event?: React.FormEvent) => {
+    event?.preventDefault()
+    const question = chatInput.trim()
+    if (!question || chatLoading) return
+    setMessages((current) => [...current, { role: 'user', text: question }])
+    setChatInput('')
+    setChatLoading(true)
+    await new Promise((resolve) => window.setTimeout(resolve, 450))
+    setMessages((current) => [...current, { role: 'bot', text: getAdmissionReply(question) }])
+    setChatLoading(false)
+  }
+
   return (
     <>
       <div className="fixed bottom-5 right-5 z-40 flex flex-col gap-3">
@@ -1374,9 +1420,30 @@ function FloatingActions() {
       <AnimatePresence>
         {chat && (
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 20 }} className="chatbot">
-            <div className="flex items-center gap-3"><Bot className="text-[#FF9A86]" /><strong>AI Admission Help</strong></div>
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex items-center gap-3"><Bot className="text-[#FF9A86]" /><strong>AI Admission Help</strong></div>
+              <button type="button" onClick={() => setChat(false)} className="rounded-full p-1 text-slate-500 transition hover:bg-slate-100 hover:text-slate-900" aria-label="Close chatbot"><X size={18} /></button>
+            </div>
             <p className="mt-3 text-sm text-slate-600">Ask about courses, fees, eligibility, hostel support, or placement preparation. A live counselor can follow up after enquiry submission.</p>
-            <input className="input-light mt-4" placeholder="Type your question..." />
+            <div className="chatbot-messages mt-4">
+              {messages.map((message, index) => (
+                <div key={`${message.role}-${index}`} className={message.role === 'user' ? 'chat-bubble chat-bubble-user' : 'chat-bubble chat-bubble-bot'}>
+                  {message.text}
+                </div>
+              ))}
+              {chatLoading && <div className="chat-bubble chat-bubble-bot">Typing...</div>}
+            </div>
+            <form onSubmit={submitChat} className="mt-4 flex items-end gap-2">
+              <input
+                className="input-light"
+                placeholder="Type your question..."
+                value={chatInput}
+                onChange={(event) => setChatInput(event.target.value)}
+              />
+              <button type="submit" className="btn-primary shrink-0" disabled={!chatInput.trim() || chatLoading}>
+                <Send size={16} />
+              </button>
+            </form>
           </motion.div>
         )}
       </AnimatePresence>
